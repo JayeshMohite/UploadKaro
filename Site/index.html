@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Day</title>
+    <link rel="stylesheet" href="landing-style.css" />
+  </head>
+  <body>
+    <div class="landing-container">
+      <div class="landing-content">
+        <img src="image1.jpg" alt="Floral Wreath" class="landing-image" />
+        <h1 class="landing-title">Welcome to Our Wedding</h1>
+        <p class="landing-text">Celebrate the love between two souls.</p>
+        <button class="landing-button" onclick="showNameInput()">Enter</button>
+      </div>
+    </div>
+
+    <div id="nameModal" class="name-modal">
+      <div class="name-modal-content">
+        <div class="name-modal-title">
+          <span class="close-modal" onclick="closeNameModal()">&times;</span>
+          <h2>Please enter your name:</h2>
+        </div>
+
+        <input
+          type="text"
+          id="nameInput"
+          placeholder="Enter your name"
+          required
+        />
+        <button class="name-modal-button" onclick="saveNameAndRedirect()">
+          Submit
+        </button>
+      </div>
+    </div>
+
+    <script src="landing-script.js"></script>
+  </body>
+</html>

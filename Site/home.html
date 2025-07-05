@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="upload-section">
+        <div class="upload-zone" id="uploadZone">
+          <div class="upload-icon">📁</div>
+          <div class="upload-text">
+            Drag & drop images here or click to browse
+          </div>
+          <div class="upload-info">
+            Supports: JPG, PNG, GIF (Max size: 50MB)
+          </div>
+          <input
+            type="file"
+            id="images"
+            multiple
+            accept="image/*,.heic,.heif"
+          />
+        </div>
+        <div class="selected-files" id="selectedFiles"></div>
+        <div class="upload-progress" id="uploadProgress">
+          <div class="progress-bar">
+            <div class="progress-bar-fill" id="progressBarFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sort options with radio buttons -->
+
+      <div class="sort-and-view-container">
+        <select onchange="handleSortChange(this.value)">
+          <option value="created_at" selected>Latest First</option>
+          <option value="liked_count">Most Liked</option>
+        </select>
+
+        <select onchange="handleViewChange(this.value)">
+          <option value="listView">List View</option>
+          <option value="gridView">Grid Liked</option>
+        </select>
+      </div>
+
+      <div id="imageList" class="image-grid list-view"></div>
+
+      <div class="observer" id="intersection-observer"></div>
+    </div>
+
+    <div class="floating-upload-button" id="floatingUploadButton">
+      <img
+        class="plus-icon"
+        src="https://www.svgrepo.com/show/532997/plus-large.svg"
+      />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
